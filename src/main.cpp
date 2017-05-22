@@ -53,7 +53,7 @@ void *Client_ptread(void *arg)
     char log[100];
 
     pthread_detach(pthread_self());
-    unsigned int i = (unsigned int) arg;
+    unsigned int i = *((unsigned int*) (&arg));
 
     sprintf(log, "Client%d connected! IP:%s\n", i, Client[i]->IP);
     Loger(log);
@@ -109,7 +109,7 @@ void *InfoClient_ptread(void *arg)
 {
     pthread_detach(pthread_self());
 
-    InfoClient_fd = (int) (arg);
+    InfoClient_fd = *((int*) (&arg));
 
     Loger("Info client connected!\n");
 
