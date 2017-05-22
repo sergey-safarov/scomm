@@ -1,0 +1,4 @@
+Build instructions
+./configure LDFLAGS=-lpthread
+./configure LDFLAGS=-lpthread CPPFLAGS=-DFREE_BSD (Если устанавливаете на FREEBSD)
+
